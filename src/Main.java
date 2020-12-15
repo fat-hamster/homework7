@@ -2,6 +2,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+    private final String[] names = {"Абама", "Акс", "Бари", "Багс", "Варджак", "Варвар", "Ганс",
+        "Гимли", "Джоки", "Деяр-Бекир", "Ексель", "Егерь", "Жбан", "Жан Батист",
+        "Зизу", "Зигмунд", "Иларион", "Иржик", "Коврик", "Кенни", "Коржик"};
+
     public static void main(String[] args) {
         Cat cat = new Cat("Борис");
         Plate plate = new Plate(30);
@@ -31,6 +35,19 @@ public class Main {
                 }
             }
         }while (!exit);
+
+        Cat[] cats = new Cat[10];
+
+        for (int i = 0; i < 10; i++) {
+            cats[i] = new Cat(names[new Random().nextInt(21)]);
+        }
+        Plate plate1 = new Plate(300); // большая тарелка для стада котов
+
+        for (int i = 0; i < 10; i++) {
+            cats[i].eat(plate1);
+            System.out.println(cats[i]);
+        }
+
         sc.close();
         System.exit(0);
     }
@@ -46,4 +63,5 @@ public class Main {
         System.out.println("Выход: 4");
         System.out.print("Пункт меню: ");
     }
+
 }

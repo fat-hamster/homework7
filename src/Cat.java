@@ -6,12 +6,12 @@ public class Cat {
     private final int SATIETY;
 
 
-    private boolean live;
+    private boolean alive;
     private int count_live;
 
     public Cat(String name) {
         this.name = name;
-        live = true;
+        alive = true;
         hunger = 0;
         count_live = 0;
         SATIETY = new Random().nextInt(10) + 20;
@@ -46,9 +46,9 @@ public class Cat {
             count_live++;
         }
         if (count_live > 3) {
-            live = false;
+            alive = false;
         }
-        if(!live) {
+        if(!alive) {
             System.out.println("Кот " + name + " умер от голода.");
             System.exit(1);
         }
@@ -72,7 +72,7 @@ public class Cat {
 
     @Override
     public String toString() {
-        return "Cat " + name + ", hunger " + hunger +
-                    ", live " + live;
+        return "[Cat] " + name + ", hunger " + hunger +
+                    ", live " + alive;
     }
 }

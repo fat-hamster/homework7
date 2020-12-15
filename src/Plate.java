@@ -6,7 +6,7 @@ public class Plate {
 
     public Plate(int food) {
         this.food = food;
-        MAX_FOOD = new Random().nextInt(30) + 40;
+        MAX_FOOD = new Random().nextInt(food) + 40; // так веселее ))
     }
 
     public void addFood(int food) {
